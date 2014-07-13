@@ -11,8 +11,6 @@ df <- raw[(raw$rdate == d1) | (raw$rdate == d2), ]
 
 # Create column for date time
 df$datetime <- strptime(paste(df$Date, df$Time), "%d/%m/%Y %H:%M:%S")
-origin <- strptime("01/02/2007 00:00:00", "%d/%m/%Y %H:%M:%S")
-df$diff <- difftime(df$datetime, origin, units="secs")
 
 # Create plot3
 png("plot3.png")
